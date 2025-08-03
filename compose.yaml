@@ -1,0 +1,69 @@
+# =============================================================================
+# DOCKER NETWORK MANAGER
+# =============================================================================
+# Automatically fixes containers with broken network configurations.
+# 
+# SETUP INSTRUCTIONS:
+# 1. Define your networks in this docker-compose.yml with proper IPAM ranges
+# 2. Add labels to any containers you want auto-managed:
+#
+#    labels:
+#      - "networkmanager.managed=true" 
+#      - "networkmanager.networks=NETWORK_NAME:IP_ADDRESS,NETWORK_NAME:IP_ADDRESS"
+
+#
+# EXAMPLE LABELS:
+#    labels:
+#      - "networkmanager.managed=true"
+#      - "networkmanager.networks=homelab_network:192.168.1.1"
+#      - "networkmanager.networks=homelab_network:192.168.1.2,homelab_bridge:192.168.0.2"
+#
+# WHAT IT FIXES:
+# - Containers with broken NetworkMode pointing to non-existent containers
+# - Missing network attachments for labeled containers
+# - Incorrect IP assignments
+# - Network configuration drift
+#
+# CONFIGURATION:
+# Update these YAML to match your network setup:
+# A.e.: Example here creates:
+# - homelab_network
+# - homelab_bridge
+# =============================================================================
+
+
+# /volume1/docker/networks/macvlan/docker-compose.yml
+version: "3.8"
+
+services:
+  network-manager:
+    container_name: network-manager
+    image: alpine:latest
+    command: /scripts/network-manager.sh
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Access to Docker API
+      - ./scripts:/scripts                          # Mount our script
+    networks:
+      - homelab_network
+      - homelab_bridge
+    restart: "no"  # Run once per compose up
+
+networks:
+  homelab_network:
+    name: homelab_network
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24 # Example Subnet replace with your own
+          ip_range: 192.168.0.0/29 # Example Ip Range replace with your own requirement and expand as needed
+          gateway: 192.168.0.0 # Example Gateway replace with your own requirement
+
+  homelab_bridge:
+    name: homelab_bridge
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24 # Example Subnet replace with your own
+          gateway: 192.168.0.0 # Example Gateway replace with your own requirement
